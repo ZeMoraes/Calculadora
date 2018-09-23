@@ -1,4 +1,4 @@
-package teste.View;
+package View;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,14 +22,14 @@ public class View {
 	ViewControl toControler = new ViewControl();
 
 	/**
-	 * Create the application.
+	 * Cria a Tela.
 	 */
 	public View() {
 		initialize();
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Inicializa os conteudos da tela.
 	 */
 	private void initialize() {
 		frmCalculadora = new JFrame();

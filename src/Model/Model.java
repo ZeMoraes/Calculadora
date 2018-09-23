@@ -1,15 +1,26 @@
-package teste.Model;
+package Model;
 
 public class Model {
 	
+	/**
+	 * @operando = operando.
+	 * @operador = operador
+	 * @lastOperato = recebe a ultima operação realizada.
+	 * @toInterface = interface Modelo para Controle.
+	 * 
+	 */
 	private static String operando = "";
 	private static String operador = "";
 	private static String lastOperato = "";
 	
 	private static Model2Control toInterface = new Model2Control();
 	
-	public boolean isButom = false;
-	
+	/**
+	 * Metodo que recebe uma tecla pressionada e análisa a operação que deve ser 
+	 * feita por ela.
+	 * @param tecla = recebe a tecla
+	 * @param bork = variavel para repassar se a tecla é digital ou fisica.
+	 */
 	public void recebeTecla(int tecla, boolean bork) {
 		switch (tecla) {
 		
