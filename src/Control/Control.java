@@ -8,11 +8,9 @@ package Control;
 public class Control {
 	
 	/**
-	 * @isButom = verifica se é botão do fisico, ou digital.
-	 * @controModel = interface Controle para View.
-	 * @modelControl = interface Controle para Modelo.
+	 * @controView = interface Controle para View.
+	 * @controlModel = interface Controle para Modelo.
 	 */
-	public boolean isButom = false;
 	private static CotrolView controView = new CotrolView();
 	private static Control2Model controlModel = new Control2Model();
 	
@@ -22,6 +20,7 @@ public class Control {
 	 */
 	public static void main(String[] args) {
 		controView.inicializarTela();
+		
 	}
 	
 	/**
@@ -50,4 +49,19 @@ public class Control {
 	public static String getTela() {
 		return controView.getTela();
 	}
+	
+	/**
+	 * Metodo para Salvar ultima informação da tela.
+	 */
+	public static void salvar() {
+		controlModel.salvar();
+	}
+	
+	/**
+	 * Metodo Para Carregar a ultima informação da tela.
+	 */
+	public static void Carregar() {
+		controlModel.carregar();
+	}
+	
 }

@@ -13,5 +13,11 @@ public class ViewControl {
 		Control.teclasPrecionadas(tecla, bork);
 	}
 	
+
+	public void salvar() {
+		// TODO Auto-generated method stub
+		Control.salvar();
+	}
+	
 	
 }

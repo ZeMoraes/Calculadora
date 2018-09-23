@@ -9,10 +9,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class View {
 
@@ -31,6 +34,7 @@ public class View {
 	/**
 	 * Inicializa os conteudos da tela.
 	 */
+	
 	private void initialize() {
 		frmCalculadora = new JFrame();
 		frmCalculadora.setFont(new Font("DialogInput", Font.PLAIN, 20));
@@ -39,7 +43,15 @@ public class View {
 		frmCalculadora.setBackground(Color.BLUE);
 		frmCalculadora.setBounds(100, 100, 339, 425);
 		frmCalculadora.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
+		frmCalculadora.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				toControler.salvar();
+				super.windowClosed(arg0);
+			}
+			
+		});
 		JPanel panel = new JPanel();
 		frmCalculadora.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(new MigLayout("", "[grow,fill]", "[grow,fill][][grow,fill][grow,fill][grow,fill][grow,fill]"));
@@ -102,41 +114,16 @@ public class View {
 			}
 		});
 		
-		JButton button7 = new JButton("7");
-		button7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(12,true);
-			}
-		});
-		
 		JButton btnC = new JButton("C");
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				toControler.teclaPrecionada(16,true);
-				//operador = "";
-				//operando = "";
-				//textField.setText("");
-				//lastOperato="";
 			}
 		});
 		panel.add(btnC, "flowx,cell 0 1,grow");
-		panel.add(button7, "flowx,cell 0 2,grow");
+	
 		
-		JButton button8 = new JButton("8");
-		button8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(13,true);
-			}
-		});
-		panel.add(button8, "cell 0 2,grow");
 		
-		JButton button = new JButton("9");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(14,true);
-			}
-		});
-		panel.add(button, "cell 0 2,grow");
 		
 		JButton button_1 = new JButton("/");
 		button_1.addActionListener(new ActionListener() {
@@ -145,6 +132,44 @@ public class View {
 			}
 		});
 		panel.add(button_1, "cell 0 2,grow");
+		
+		
+		
+		
+		
+		JButton button_4 = new JButton("*");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				toControler.teclaPrecionada(3,true);
+			}
+		});
+		panel.add(button_4, "cell 0 3,grow");
+		
+		
+		// NUMEROS 1 a 0
+		JButton button_5 = new JButton("1");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				toControler.teclaPrecionada(6,true);
+			}
+		});
+		panel.add(button_5, "flowx,cell 0 4,grow");
+		
+		JButton button_6 = new JButton("2");
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				toControler.teclaPrecionada(7,true);
+			}
+		});
+		panel.add(button_6, "cell 0 4,grow");
+		
+		JButton button_7 = new JButton("3");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				toControler.teclaPrecionada(8,true);
+			}
+		});
+		panel.add(button_7, "cell 0 4,grow");
 		
 		JButton btnNewButton = new JButton("4");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -170,37 +195,32 @@ public class View {
 		});
 		panel.add(button_3, "cell 0 3,grow");
 		
-		JButton button_4 = new JButton("*");
-		button_4.addActionListener(new ActionListener() {
+		JButton button7 = new JButton("7");
+		button7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(3,true);
+				toControler.teclaPrecionada(12,true);
 			}
 		});
-		panel.add(button_4, "cell 0 3,grow");
+		panel.add(button7, "flowx,cell 0 2,grow");
 		
-		JButton button_5 = new JButton("1");
-		button_5.addActionListener(new ActionListener() {
+		JButton button8 = new JButton("8");
+		button8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(6,true);
+				toControler.teclaPrecionada(13,true);
 			}
 		});
-		panel.add(button_5, "flowx,cell 0 4,grow");
+		panel.add(button8, "cell 0 2,grow");
 		
-		JButton button_6 = new JButton("2");
-		button_6.addActionListener(new ActionListener() {
+		JButton button = new JButton("9");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(7,true);
+				toControler.teclaPrecionada(14,true);
 			}
 		});
-		panel.add(button_6, "cell 0 4,grow");
+		panel.add(button, "cell 0 2,grow");
 		
-		JButton button_7 = new JButton("3");
-		button_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(8,true);
-			}
-		});
-		panel.add(button_7, "cell 0 4,grow");
+		////////////////////////////////////////////////
+		
 		
 		JButton button_8 = new JButton("+");
 		button_8.addActionListener(new ActionListener() {
@@ -208,6 +228,7 @@ public class View {
 				toControler.teclaPrecionada(2,true);
 			}
 		});
+
 		panel.add(button_8, "cell 0 4,grow");
 		
 		JButton button_10 = new JButton("+/-");
@@ -254,6 +275,9 @@ public class View {
 			}
 		});
 		panel.add(button_14, "cell 0 1,grow");
+		
+		
+		
 	}
 
 }

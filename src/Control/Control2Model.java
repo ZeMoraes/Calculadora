@@ -21,5 +21,12 @@ public class Control2Model {
 		calculadora.recebeTecla(tecla, bork);
 	}
 	
+	public void salvar() {
+		calculadora.saveFile();
+	}
+	
+	public void carregar() {
+		calculadora.readFile();
+	}
 	
 }

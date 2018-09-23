@@ -18,6 +18,8 @@ public class CotrolView {
 			public void run() {
 				try {
 					window.frmCalculadora.setVisible(true);
+					Control.Carregar();
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,7 +41,10 @@ public class CotrolView {
 	 */
 	public String getTela() {
 		return window.textField.getText();
+		
 	}
+	
+	
 	
 	
 }
