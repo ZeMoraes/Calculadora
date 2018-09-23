@@ -1,6 +1,4 @@
-package teste;
-
-import java.awt.EventQueue;
+package teste.Control;
 
 /**
  * 
@@ -9,11 +7,9 @@ import java.awt.EventQueue;
  */
 public class Control {
 	
-	private static String operando = "";
-	private static String operador = "";
-	private static String lastOperato = "";
 	public boolean isButom = false;
 	private static CotrolView controModel = new CotrolView();
+	private static Control2Model modelControl = new Control2Model();
 	
 	
 	/**
@@ -30,6 +26,15 @@ public class Control {
 	 * @param bork indica se a tecla foi precionada via teclado ou interface gráfica.
 	 */
 	public static void teclasPrecionadas(int tecla,boolean bork) {
-		
+		modelControl.teclasPrecionadas(tecla, bork);
+	}
+	
+	public static void setStringTela(String toTela) 
+	{
+		controModel.setTela(toTela);
+	}
+	
+	public static String getTela() {
+		return controModel.getTela();
 	}
 }

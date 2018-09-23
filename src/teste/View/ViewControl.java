@@ -1,4 +1,6 @@
-package teste;
+package teste.View;
+
+import teste.Control.Control;
 
 public class ViewControl {
 	

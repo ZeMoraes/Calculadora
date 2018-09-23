@@ -1,4 +1,4 @@
-package teste;
+package teste.View;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +16,7 @@ import java.awt.event.KeyEvent;
 
 public class View {
 
-	JFrame frmCalculadora;
+	public JFrame frmCalculadora;
 	public JTextField textField;
 
 	ViewControl toControler = new ViewControl();
@@ -105,13 +105,14 @@ public class View {
 		JButton button7 = new JButton("7");
 		button7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(12,false);
+				toControler.teclaPrecionada(12,true);
 			}
 		});
 		
 		JButton btnC = new JButton("C");
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				toControler.teclaPrecionada(16,true);
 				//operador = "";
 				//operando = "";
 				//textField.setText("");
@@ -124,7 +125,7 @@ public class View {
 		JButton button8 = new JButton("8");
 		button8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(13,false);
+				toControler.teclaPrecionada(13,true);
 			}
 		});
 		panel.add(button8, "cell 0 2,grow");
@@ -132,7 +133,7 @@ public class View {
 		JButton button = new JButton("9");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				toControler.teclaPrecionada(14,false);
+				toControler.teclaPrecionada(14,true);
 			}
 		});
 		panel.add(button, "cell 0 2,grow");

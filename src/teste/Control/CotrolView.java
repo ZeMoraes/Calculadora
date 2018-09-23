@@ -1,6 +1,8 @@
-package teste;
+package teste.Control;
 
 import java.awt.EventQueue;
+
+import teste.View.View;
 
 public class CotrolView {
 	private static View window = new View();
@@ -16,5 +18,15 @@ public class CotrolView {
 			}
 		});
 	}
+	
+	
+	public void setTela(String operando) {
+		window.textField.setText(operando);
+	}
+	
+	public String getTela() {
+		return window.textField.getText();
+	}
+	
 	
 }
